@@ -10,7 +10,7 @@
 
 Summary: A SAML 2.0 authentication module for the Apache Httpd Server
 Name: mod_auth_mellon
-Version: 0.9.1
+Version: 0.10.0
 Release: 1%{?dist}
 Group: System Environment/Daemons
 Source0: https://github.com/UNINETT/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -72,6 +72,9 @@ rm -rf %{buildroot}
 %dir /run/%{name}/
 
 %changelog
+* Wed Mar 03 2015 Richard Clark <rclark@telnic.org> 0.10.0-1%{?dist}
+- Update to 0.10.0
+
 * Tue Sep 16 2014 Richard Clark <rclark@telnic.org> 0.9.1-1%{?dist}
 - Update to 0.9.1
 - Project migration to git
