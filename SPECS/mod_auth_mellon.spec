@@ -11,7 +11,7 @@
 Summary: A SAML 2.0 authentication module for the Apache Httpd Server
 Name: mod_auth_mellon
 Version: 0.10.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: System Environment/Daemons
 Source0: https://github.com/UNINETT/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Source1: auth_mellon.conf
@@ -20,9 +20,14 @@ Source3: mod_auth_mellon.conf
 Source4: mellon_create_metadata.sh
 License: GPLv2+
 BuildRoot: %{_tmppath}/%{name}-root
-BuildRequires: curl-devel, glib2-devel, httpd-devel, lasso-devel, openssl-devel, xmlsec1-devel
+BuildRequires: curl-devel
+BuildRequires: glib2-devel
+BuildRequires: httpd-devel
+BuildRequires: lasso-devel >= 2.4.1
+BuildRequires: openssl-devel
+BuildRequires: xmlsec1-devel
 Requires: httpd-mmn = %{_httpd_mmn}
-Requires: lasso >= 2.3.6
+Requires: lasso >= 2.4.1
 Url: https://github.com/UNINETT/mod_auth_mellon
 
 %description
@@ -72,6 +77,9 @@ rm -rf %{buildroot}
 %dir /run/%{name}/
 
 %changelog
+* Wed Mar 03 2015 Richard Clark <rclark@telnic.org> 0.10.0-2%{?dist}
+- Update dependency on lasso-devel to pin to current version
+
 * Wed Mar 03 2015 Richard Clark <rclark@telnic.org> 0.10.0-1%{?dist}
 - Update to 0.10.0
 
